@@ -1,0 +1,212 @@
+==========
+
+Please solve this similarly:
+
+"Looks like the Chief's not here. Next!" One of The Historians pulls out a device and pushes the only button on it. After a brief flash, you recognize the interior of the Ceres monitoring station!
+
+As the search for the Chief continues, a small Elf who lives on the station tugs on your shirt; she'd like to know if you could help her with her word search (your puzzle input). She only has to find one word: XMAS.
+
+This word search allows words to be horizontal, vertical, diagonal, written backwards, or even overlapping other words. It's a little unusual, though, as you don't merely need to find one instance of XMAS - you need to find all of them. Here are a few ways XMAS might appear, where irrelevant characters have been replaced with .:
+
+..X...
+.SAMX.
+.A..A.
+XMAS.S
+.X....
+The actual word search will be full of letters instead. For example:
+
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
+In this word search, XMAS occurs a total of 18 times; here's the same word search again, but where letters not involved in any XMAS have been replaced with .:
+
+....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX
+Take a look at the little Elf's word search. How many times does XMAS appear?
+
+==========
+
+Same with this:
+
+(I accidentally submitted that instead of pasting the day4b instructions in the
+same comment.)
+
+==========
+
+Please solve this similarly:
+
+The Elf looks quizzically at you. Did you misunderstand the assignment?
+
+Looking for the instructions, you flip over the word search to find that this isn't actually an XMAS puzzle; it's an X-MAS puzzle in which you're supposed to find two MAS in the shape of an X. One way to achieve that is like this:
+
+M.S
+.A.
+M.S
+Irrelevant characters have again been replaced with . in the above diagram. Within the X, each MAS can be written forwards or backwards.
+
+Here's the same example from before, but this time all of the X-MASes have been kept instead:
+
+.M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........
+In this example, an X-MAS appears 9 times.
+
+Flip the word search from the instructions back over to the word search side and try again. How many times does an X-MAS appear?
+
+(Answer was wrong)
+
+==========
+
+That's not the right answer; your answer is too low. If you're stuck, make sure you're using the full input data
+
+(Code identical except for whitespace. Answer still wrong).
+
+==========
+
+(ChatGPT window scrolling broke or it refreshed or something, so started from
+scratch with the day4a prompt to set context.)
+
+Please solve the following using a Python program, and taking the input from a file named ../input/day4.txt.
+
+"Looks like the Chief's not here. Next!" One of The Historians pulls out a device and pushes the only button on it. After a brief flash, you recognize the interior of the Ceres monitoring station!
+
+As the search for the Chief continues, a small Elf who lives on the station tugs on your shirt; she'd like to know if you could help her with her word search (your puzzle input). She only has to find one word: XMAS.
+
+This word search allows words to be horizontal, vertical, diagonal, written backwards, or even overlapping other words. It's a little unusual, though, as you don't merely need to find one instance of XMAS - you need to find all of them. Here are a few ways XMAS might appear, where irrelevant characters have been replaced with .:
+
+..X...
+.SAMX.
+.A..A.
+XMAS.S
+.X....
+The actual word search will be full of letters instead. For example:
+
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
+In this word search, XMAS occurs a total of 18 times; here's the same word search again, but where letters not involved in any XMAS have been replaced with .:
+
+....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX
+Take a look at the little Elf's word search. How many times does XMAS appear?
+
+==========
+
+Please update the solution according to the following instructions. Remember that the direction of each MAS is independent.
+
+The Elf looks quizzically at you. Did you misunderstand the assignment?
+
+Looking for the instructions, you flip over the word search to find that this isn't actually an XMAS puzzle; it's an X-MAS puzzle in which you're supposed to find two MAS in the shape of an X. One way to achieve that is like this:
+
+M.S
+.A.
+M.S
+Irrelevant characters have again been replaced with . in the above diagram. Within the X, each MAS can be written forwards or backwards.
+
+Here's the same example from before, but this time all of the X-MASes have been kept instead:
+
+.M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........
+In this example, an X-MAS appears 9 times.
+
+Flip the word search from the instructions back over to the word search side and try again. How many times does an X-MAS appear?
+
+==========
+
+You forgot the #! line.
+
+==========
+
+That's not the right answer; your answer is too high. If you're stuck, make sure you're using the full input data.
+
+I think the function check_xmas should only return 0 and 1 since it needs to count the number of X-MASs not each MAS separately.
+
+==========
+
+That's not the right answer. If you're stuck, make sure you're using the full input data.
+
+Remember that each word can be forwards or backwards, but each one might be the same or a different direction.
+
+==========
+
+That's not the right answer. That program reported an answer of 0, but we know there are many X-MASes. Remember that there need to be two separate words in an X-MAS. Each word can be in either direction, but both words must be present.
+
+==========
+
+That's not the right answer. Please change check_xmas so that it (1) checks whether MAS or SAM appears in the first diagonal, (2) checks whether MAS or SAM appears in the second diagonal, (3) returns 1 if both words appear, and 0 otherwise.
+
+==========
+
+That code has a type error. I got the following error messages:
+
+Traceback (most recent call last):
+  File "/home/swarren/git_wa/advent-of-code-2024/chatgpt/./day4b.py", line 71, in <module>
+    main()
+  File "/home/swarren/git_wa/advent-of-code-2024/chatgpt/./day4b.py", line 66, in main
+    occurrences = count_xmas_patterns(grid)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/swarren/git_wa/advent-of-code-2024/chatgpt/./day4b.py", line 58, in count_xmas_patterns
+    count += check_xmas(grid, row, col)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/swarren/git_wa/advent-of-code-2024/chatgpt/./day4b.py", line 46, in check_xmas
+    if (check_diagonal('MAS', row, col, dir1, dir2) or check_diagonal('SAM', row, col, dir1, dir2)):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/swarren/git_wa/advent-of-code-2024/chatgpt/./day4b.py", line 25, in check_diagonal
+    m1_row, m1_col = row + dir1[0], col + dir1[1]  # top-left
+                     ~~~~^~~~~~~~~
+TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+
+==========
+
+That's still not right. The code should check that two words exist and form an x, with each word independently being in one of two directions. Instead, it's checking whether either word exist and forces them to be in correlated directions.
+
+==========
+
+That was the right answer.
+
+==========
