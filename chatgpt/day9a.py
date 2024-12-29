@@ -1,33 +1,49 @@
 #!/usr/bin/env python3
 
-def parse_disk_map(file_path):
-    """Parses the input file and returns the disk map as a list of integers."""
+def parse_input(file_path):
+    """Reads the disk map from the input file."""
     with open(file_path, 'r') as f:
-        return [int(char) for char in f.read().strip()]
+        return f.read().strip()
 
-def compact_disk(disk_map):
-    """Compacts the disk by moving file blocks to the leftmost free space."""
-    compacted = []
-    for i in range(0, len(disk_map), 2):
-        file_blocks = [disk_map[i]] * disk_map[i]
-        compacted.extend(file_blocks)
-    compacted.extend([0] * (len(disk_map) - len(compacted)))  # Fill with free space
-    return compacted
+def convert_disk_map_to_block_map(disk_map):
+    """Converts the compact disk map to a block map."""
+    block_map = []
+    file_id = 0
+    for i, length in enumerate(map(int, disk_map)):
+        if i % 2 == 0:  # File length
+            block_map.extend([file_id] * length)
+            file_id += 1
+        else:  # Free space length
+            block_map.extend([None] * length)
+    return block_map
 
-def calculate_checksum(compacted_map):
-    """Calculates the filesystem checksum."""
-    checksum = 0
-    for position, block in enumerate(compacted_map):
-        if block != 0:  # Skip free space
-            checksum += position * block
-    return checksum
+def compact_block_map(block_map):
+    """Compacts the block map by moving file blocks to the leftmost free spaces."""
+    free_index = 0
+    file_blocks_to_move = [i for i, block in enumerate(block_map) if block is not None]
+
+    for i in range(len(block_map)):
+        if block_map[i] is None:  # Found a free space
+            if file_blocks_to_move:
+                last_file_index = file_blocks_to_move.pop()  # Get the last file block
+                if last_file_index < i:  # Stop if no more blocks can be moved
+                    break
+                block_map[i] = block_map[last_file_index]  # Move it to the free space
+                block_map[last_file_index] = None  # Clear the old position
+
+    return block_map
+
+def calculate_checksum(block_map):
+    """Calculates the checksum of the compacted block map."""
+    return sum(index * block for index, block in enumerate(block_map) if block is not None)
 
 def main():
-    file_path = "../input/day9.txt"
-    disk_map = parse_disk_map(file_path)
-    compacted_map = compact_disk(disk_map)
-    checksum = calculate_checksum(compacted_map)
-    print(f"Filesystem checksum: {checksum}")
+    file_path = '../input/day9.txt'
+    disk_map = parse_input(file_path)
+    block_map = convert_disk_map_to_block_map(disk_map)
+    compacted_block_map = compact_block_map(block_map)
+    checksum = calculate_checksum(compacted_block_map)
+    print(checksum)
 
 if __name__ == "__main__":
     main()

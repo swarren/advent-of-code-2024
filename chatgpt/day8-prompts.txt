@@ -133,6 +133,3 @@ That's not the right answer; your answer is too low.
 Remember that the loops the add/subtract the delta from the antenna position need to start at the antenna position, not 1 multiple of the delta away.
 
 ==========
-==========
-==========
-==========
